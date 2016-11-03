@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS 模型指令</title>
+	<link rel="stylesheet" href="../dist/css/style.css">
+	<style>
+		input.ng-invalid{
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<!-- ng-model -->
+	<!-- 验证用户输入 -->
+	<form ng-app="" name="myForm">
+		Emali:
+		<input type="email" name="myAddress" ng-model="text">
+		<span ng-show="myForm.myAddress.$error.email">这不是一个合法的邮箱地址</span>
+	</form>
+	<!-- 应用状态 -->
+	<form ng-app name="myForm2" ng-init="myText = 'test@runoob.com'">
+		Emali:
+		<input type="email" name="myAddress" ng-model="myText" required>
+		<h1>状态</h1>
+	    {{myForm2.myAddress.$valid}}
+	    {{myForm2.myAddress.$dirty}}
+	    {{myForm2.myAddress.$touched}}
+	    {{myForm2.myAddress.$invalid}}
+	</form>
+	<script src="../vendor/angular.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS 表达式</title>
+	<link rel="stylesheet" href="../dist/css/style.css">
+</head>
+<body>
+	<div type="text" ng-init="person={firstName:'John',lastName:'Doe'}"></div>
+	<p>姓名：{{person.firstName}}</p>
+	<hr>
+	<!-- 使用 ng-bind 的相同实例： -->
+	<div type="text" ng-init="person={firstName:'John',lastName:'Doe'}"></div>
+	<p>姓名：<span ng-bind="person.firstName"></span></p>
+	<script src="../vendor/angular.min.js"></script>
+</body>
+</html>

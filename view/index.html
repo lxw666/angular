@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html ng-app>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>index</title>
 	<link rel="stylesheet" href="../dist/css/style.css">
 </head>
 <body>
-	your name: <input type="text" ng-model="yourname" placeholder="World">
-	<hr>
-	Hello {{yourname || 'World'}}
+	<div ng-app="app" ng-controller="myCtrl">
+		名字: <input type="text" ng-model="firstName">
+		姓: <input type="text" ng-model="lastName">
+		<hr>
+		姓名：{{firstName + '' + lastName}}
+	</div>
 	<script src="../vendor/angular.min.js"></script>
 	<!-- <script src="../vendor/jquery.min.js"></script>
 	<script src="../dist/js/index.js"></script> -->
+	<script>
+		var app = angular.module('app',[]);
+		app.controller('myCtrl', function($scope){
+			$scope.firstName = "Join";
+			$scope.lastName = "Doe";
+		})
+	</script>
 </body>
 </html>
