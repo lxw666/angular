@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS 控制器与过滤器</title>
+	<link rel="stylesheet" href="../dist/css/style.css">
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		名：<input type="text" ng-model="firstName">
+		姓：<input type="text" ng-model="lastName">
+		<hr>
+		全名：{{(firstName | uppercase) + " " + (lastName | lowercase)}}
+	</div>
+
+	<div id="nameApp" ng-app="nameApp" ng-controller="namesCtrl">
+		<p>输入过滤</p>
+		<input type="text" ng-model="test">
+		<ul>
+			<li ng-repeat="x in names | filter:test | orderBy:'-country'">{{x.name + ',' + x.country}}</li>
+		</ul>
+	</div>
+	<script src="../vendor/angular.min.js"></script>
+	<script src="../dist/js/controller.js"></script>
+	<script>
+		
+	</script>
+</body>
+</html>
